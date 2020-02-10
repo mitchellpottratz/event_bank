@@ -7,31 +7,10 @@ export class GoogleMap extends Component {
         super(props);
 
         this.state = {
-            usersLocation: {
-                lat: 0,
-                lng: 0
-            },
             isLoading: true
         }
     }
 
-    componentDidMount() {
-        this.getUsersLocation();
-    }
-
-    // uses the google api to get the users current location so it can 
-    // be marked on the map
-    getUsersLocation = () => {
-        navigator.geolocation.getCurrentPosition(position => {
-            this.setState({
-                usersLocation: {
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude
-                },
-                isLoading: false
-            })
-        })    
-    }
 
     render() {
         if (this.state.isLoading) {

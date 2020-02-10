@@ -13,9 +13,24 @@ class Home extends Component {
                 lat: 0,
                 lng: 0
             }
-
-
         }
+    }
+
+    componentDidMount() {
+        this.getUsersLocation();
+    }
+
+    // gets the users latitude and longitude
+    getUsersLocation = () => {
+        navigator.geolocation.getCurrentPosition(position => {
+            this.setState({
+                usersLocation: {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                },
+                isLoading: false
+            })
+        })    
     }
 
     render() {
