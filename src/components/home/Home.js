@@ -9,8 +9,8 @@ class Home extends Component {
 
     render() {
         return (
-            <div>
-                <h1>Home Page</h1>
+            <div className="ui container">
+                <h1 className="ui header">Home Page</h1>
             </div>    
         )
     }

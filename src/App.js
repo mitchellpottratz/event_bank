@@ -22,11 +22,11 @@ class App extends Component {
           </Route>
           <Route path="/about">
             <div>
-
             </div>
           </Route>
         </Switch>
       </BrowserRouter>
+      
     )
   }
 
