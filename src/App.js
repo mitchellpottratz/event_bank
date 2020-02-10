@@ -10,6 +10,7 @@ import './App.css';
 // component imports 
 import Home from "./components/home/Home.js";
 
+console.log("key:", process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
 
 class App extends Component {
   

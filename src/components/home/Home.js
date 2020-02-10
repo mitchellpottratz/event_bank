@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import GoogleMap from '../map/GoogleMap.js';
 
 
 class Home extends Component {
@@ -11,6 +12,7 @@ class Home extends Component {
         return (
             <div className="ui container">
                 <h1 className="ui header">Home Page</h1>
+                <GoogleMap />
             </div>    
         )
     }
