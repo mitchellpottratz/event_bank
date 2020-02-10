@@ -11,17 +11,25 @@ class MapForm extends Component {
         }
     }
 
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+    }
+
+
     render() {
         return (
             <form className="ui form">
                 <div className="equal width fields">
                     <div className="field">
-                        <label for="location">Location</label>
+                        <label htmlFor="location">Location</label>
                         <div className="ui input">
                             <input type="text"
                                    placeholder="Location"
                                    id="location"
                                    name="location"
+                                   value={this.state.location}
                                    onChange={this.handleChange} />   
                         </div>    
                     </div>    
