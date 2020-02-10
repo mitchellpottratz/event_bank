@@ -19,10 +19,10 @@ export class GoogleMap extends Component {
         this.getUsersLocation();
     }
 
-
+    // uses the google api to get the users current location so it can 
+    // be marked on the map
     getUsersLocation = () => {
         navigator.geolocation.getCurrentPosition(position => {
-            console.log('lat:', position.coords.latitude);
             this.setState({
                 usersLocation: {
                     lat: position.coords.latitude,
@@ -31,27 +31,22 @@ export class GoogleMap extends Component {
                 isLoading: false
             })
         })    
-        console.log('users location:', this.state.usersLocation);
     }
 
     render() {
-
         if (this.state.isLoading) {
             return null;
         } 
 
         return (
-            
             <Map 
                 google={this.props.google}
                 style={{
-                    width: "80%", height: "100%"
+                    width: "80%",
+                    height: "100%"
                 }}
                 zoom={14}  
-                initialCenter={this.state.usersLocation} 
-            />
-            
-            
+                initialCenter={this.state.usersLocation} />
         );
     }
 }

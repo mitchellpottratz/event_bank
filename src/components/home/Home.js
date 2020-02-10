@@ -7,6 +7,15 @@ class Home extends Component {
 
     constructor(props) {
         super(props);
+
+        this.state = {
+            usersLocation: {
+                lat: 0,
+                lng: 0
+            }
+
+
+        }
     }
 
     render() {
