@@ -17,10 +17,14 @@ class MapForm extends Component {
         });
     }
 
+    handleSubmit = (e) => {
+        e.preventDefault()
+    }
+
 
     render() {
         return (
-            <form className="ui form">
+            <form className="ui form" onSubmit={this.handleSubmit}>
                 <div className="equal width fields">
                     <div className="field">
                         <label htmlFor="location">Location</label>
@@ -34,6 +38,9 @@ class MapForm extends Component {
                         </div>    
                     </div>    
                 </div>
+                <input type="submit"
+                       className="ui button"
+                       value="Search" /> 
             </form>
         )
     }
