@@ -5,18 +5,22 @@ const initialState = {
     lng: 0
 }
 
-
 const locationReducer = (state=initialState, action) => {
     switch (action.type) {
 
         case SET_USERS_LOCATION:
+            console.log("SET_USERS_LOCATION reducer");
             return {
                 ...state,
-                lat: action.lat,
-                lng: action.lng
+                lat: action.location.lat,
+                lng: action.location.lng
             }
+        
+        default:
+            return state
     }
-
 }
+
+export default locationReducer;
 
 
