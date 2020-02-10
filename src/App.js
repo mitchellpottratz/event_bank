@@ -7,6 +7,9 @@ import {
 } from "react-router-dom";
 import './App.css';
 
+// component imports 
+import Home from "./components/home/Home.js";
+
 
 class App extends Component {
   
@@ -15,9 +18,7 @@ class App extends Component {
       <BrowserRouter>
         <Switch>
           <Route path="/">
-          <div>
-            <h1>Home</h1>
-          </div>
+            <Home />
           </Route>
           <Route path="/about">
             <div>
