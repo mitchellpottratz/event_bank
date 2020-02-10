@@ -7,7 +7,6 @@ export class GoogleMap extends Component {
         super(props);
     }
 
-
     render() {
         return (
             <Map 

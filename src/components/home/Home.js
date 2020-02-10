@@ -24,13 +24,14 @@ class Home extends Component {
     // gets the users latitude and longitude
     getUsersLocation = () => {
         navigator.geolocation.getCurrentPosition(position => {
-            this.setState({
-                usersLocation: {
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude
-                },
-                isLoading: false
-            });
+            const usersLocationObj = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            }
+            // sets the users location in the store
+            this.props.setUsersLocation(usersLocationObj);
+            
+            this.setState({ isLoading: false });
         });    
     }
 
