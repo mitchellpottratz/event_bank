@@ -16,7 +16,7 @@ export class GoogleMap extends Component {
                     height: "100%"
                 }}
                 zoom={14}  
-                initialCenter={this.state.usersLocation} />
+                initialCenter={this.props.usersLocation} />
         );
     }
 }

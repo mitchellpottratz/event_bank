@@ -24,13 +24,15 @@ class Home extends Component {
     // gets the users latitude and longitude
     getUsersLocation = () => {
         navigator.geolocation.getCurrentPosition(position => {
+            console.log("lat:", position.coords.latitude);
+            console.log("lng:", position.coords.longitude);
             const usersLocationObj = {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
             }
             // sets the users location in the store
             this.props.setUsersLocation(usersLocationObj);
-            
+
             this.setState({ isLoading: false });
         });    
     }
@@ -40,13 +42,12 @@ class Home extends Component {
             <div className="ui container">
                 <h1 className="ui header">Home Page</h1>
                 <MapForm />
-
                 {
                 this.state.isLoading 
                 ? 
                 <p>Loading</p>
                 : 
-                <GoogleMap />  
+                <GoogleMap usersLocation={this.props.usersLocation} />  
                 }
             </div>    
         )

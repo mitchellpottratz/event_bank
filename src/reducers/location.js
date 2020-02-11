@@ -10,8 +10,8 @@ const locationReducer = (state=initialState, action) => {
 
         case SET_USERS_LOCATION:
             console.log("SET_USERS_LOCATION reducer");
+            console.log('location in reducer:', action.location);
             return {
-                ...state,
                 lat: action.location.lat,
                 lng: action.location.lng
             }
